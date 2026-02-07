@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>The Wedding of Irwan & Mishul</title>
+    <meta name="description" content="Undangan Pernikahan Eksklusif Irwan & Mishul">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="The Wedding of Irwan & Mishul">
+    <meta property="og:description"
+        content="Senin, 06 April 2026 - Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i untuk hadir.">
+
+    <meta property="og:url" content="">
+    <meta property="og:image" content="/assets/img/background.jpeg">
+
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="600">
+    <meta property="og:image:height" content="600">
+    <meta itemprop="image" content="/assets/img/background.jpeg">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400&family=Great+Vibes&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            /* Palette Warna: Creamy, Gold, Sage */
+            --primary: #6B705C;
+            --secondary: #A5A58D;
+            --gold: #D4A373;
+            --bg-light: #FDFCF8;
+            --text-dark: #2F3E46;
+
+            /* Typography */
+            --font-main: 'Work Sans', sans-serif;
+            --font-serif: 'Cormorant Garamond', serif;
+            --font-script: 'Great Vibes', cursive;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* --- TYPOGRAPHY UTILS --- */
+        h1,
+        h2,
+        h3,
+        .font-serif {
+            font-family: var(--font-serif);
+        }
+
+        .font-script {
+            font-family: var(--font-script);
+            color: var(--gold);
+        }
+
+        .text-gold {
+            color: var(--gold);
+        }
+
+        /* --- GLASSMORPHISM CARD --- */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        /* --- BUTTONS --- */
+        .btn-romantic {
+            background: var(--primary);
+            color: white;
+            border-radius: 50px;
+            padding: 10px 35px;
+            font-family: var(--font-main);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+            border: 1px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .btn-romantic:hover {
+            background: transparent;
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* --- HERO & COVER (PARALLAX) --- */
+        #welcome-overlay,
+        header {
+            /* Pastikan file nikah.jpeg ada di assets/img/ */
+            background-image: url('assets/img/nikah.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Overlay Fullscreen */
+        #welcome-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.8s ease-in-out;
+        }
+
+        .overlay-dim {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+        }
+
+        /* Header Parallax Style */
+        header {
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                background-attachment: scroll;
+            }
+        }
+
+        /* --- ANIMASI --- */
+        .cover-open {
+            transform: translateY(-100%);
+        }
+
+        .floating-animate {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* --- MEMPELAI FOTO --- */
+        .couple-img-frame {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+        }
+
+        .couple-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        .couple-flower {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 10px;
+            left: 10px;
+            border-radius: 50%;
+            border: 2px dashed var(--gold);
+            z-index: 1;
+            animation: spin-slow 20s linear infinite;
+        }
+
+        @keyframes spin-slow {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* --- MUSIC BUTTON --- */
+        #music-btn {
+            position: fixed;
+            bottom: 90px;
+            left: 20px;
+            z-index: 1050;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(5px);
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            border-radius: 50%;
+            display: none;
+            animation: spin 4s linear infinite;
+        }
+
+        .paused {
+            animation-play-state: paused !important;
+            filter: grayscale(1);
+        }
+
+        /* --- MOBILE NAV (FLOATING) --- */
+        .navbar-floating {
+            background: rgba(255, 255, 255, 0.85) !important;
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            margin: 0 15px 15px 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid white;
+        }
+
+        .nav-link {
+            font-size: 1.2rem;
+            transition: 0.2s;
+            color: var(--secondary) !important;
+        }
+
+        .nav-link.active {
+            color: var(--primary) !important;
+            transform: translateY(-3px);
+        }
+
+        /* --- FALLING PETALS ANIMATION --- */
+        .petal {
+            position: fixed;
+            top: -10%;
+            z-index: 0;
+            user-select: none;
+            pointer-events: none;
+            animation-name: falling;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes falling {
+            0% {
+                top: -10%;
+                transform: translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0.8;
+            }
+
+            100% {
+                top: 110%;
+                transform: translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbar-example">
+
+    <audio id="bg-music" loop>
+        <source src="assets/music/pure-love-304010.mp3" type="audio/mp3">
+    </audio>
+    <button id="music-btn" onclick="toggleMusic()"><i class="fa-solid fa-compact-disc fa-lg"></i></button>
+
+    <section id="welcome-overlay">
+        <div class="overlay-dim"></div>
+        <div class="text-center text-white position-relative z-2 p-4" data-aos="zoom-in">
+            <p class="text-uppercase small tracking-wide mb-3">The Wedding Celebration of</p>
+            <h1 class="font-script display-1 mb-3">Irwan & Mishul</h1>
+            <p class="mb-4 fst-italic">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+
+            <div class="glass-panel d-inline-block px-5 py-3 mb-4">
+                <h3 class="h5 mb-0 text-dark font-serif fw-bold" id="nama-tamu">Tamu Undangan</h3>
+            </div>
+
+            <br>
+            <button class="btn btn-romantic shadow-lg" onclick="bukaUndangan()">
+                <i class="fa-solid fa-envelope-open me-2"></i> Buka Undangan
+            </button>
+        </div>
+    </section>
+
+    <main class="overflow-hidden position-relative">
+
+        <div id="petals-container"></div>
+
+        <header id="home">
+            <div class="overlay-dim"></div>
+            <div class="container text-center text-white position-relative z-1" data-aos="fade-up">
+                <p class="text-uppercase letter-spacing-2 mb-2">We Are Getting Married</p>
+                <h1 class="display-1 font-script my-2">Irwan & Mishul</h1>
+                <div class="d-flex justify-content-center align-items-center gap-3 my-4">
+                    <div class="border-top border-white w-25"></div>
+                    <span class="font-serif fs-5">Senin, 06 April 2026</span>
+                    <div class="border-top border-white w-25"></div>
+                </div>
+            </div>
+            <div class="position-absolute bottom-0 mb-5 text-white floating-animate z-1">
+                <small>Scroll ke Bawah <i class="fa-solid fa-chevron-down ms-1"></i></small>
+            </div>
+        </header>
+
+        <section id="mempelai" class="py-5 bg-light position-relative">
+            <div class="container text-center py-5">
+                <h2 class="font-arabic py-4 m-0" style="font-size: 2rem;">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</h2>
+
+                <p class="mb-5 text-muted px-3" data-aos="fade-up">
+                    Assalamu’alaikum Warahmatullahi Wabarakatuh<br>
+                    Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud menyelenggarakan pernikahan putra-putri
+                    kami:
+                </p>
+
+                <div class="row justify-content-center align-items-center g-5">
+                    <div class="col-lg-4" data-aos="fade-right">
+                        <div class="couple-img-frame mb-3">
+                            <img src="assets/img/pria1.png" alt="Irwan" class="couple-img">
+                            <div class="couple-flower"></div>
+                        </div>
+                        <h2 class="h3 font-serif fw-bold text-dark">Irwan</h2>
+                        <p class="text-gold font-script fs-4">Putra Pertama</p>
+                        <p class="small text-muted">Putra Pertama dari Bpk. Mauladin & Ibu Marianingsih</p>
+                    </div>
+
+                    <div class="col-lg-1 font-script display-4 text-gold" data-aos="zoom-in">&</div>
+
+                    <div class="col-lg-4" data-aos="fade-left">
+                        <div class="couple-img-frame mb-3">
+                            <img src="assets/img/mishul1.jpeg" alt="Mishul" class="couple-img">
+                            <div class="couple-flower"></div>
+                        </div>
+                        <h2 class="h3 font-serif fw-bold text-dark">Mishul</h2>
+                        <p class="text-gold font-script fs-4">Putri Pertama</p>
+                        <p class="small text-muted">Putri Pertama dari Bpk. Nursaat & Ibu Siasih</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="position-relative py-5 text-white text-center" style="background: var(--primary);">
+            <div class="position-absolute top-0 start-0 w-100 overflow-hidden" style="line-height: 0;">
+                <svg viewBox="0 0 1200 120" preserveAspectRatio="none"
+                    style="width: 100%; height: 50px; fill: var(--bg-light); transform: rotate(180deg);">
+                    <path
+                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z">
+                    </path>
+                </svg>
+            </div>
+
+            <div class="container py-5" data-aos="fade-up">
+                <h2 class="font-serif mb-4 display-6">Menuju Hari Bahagia</h2>
+                <div class="d-flex justify-content-center gap-3" id="countdown-timer"></div>
+                <div class="mt-5">
+                    <a href="https://calendar.google.com/" target="_blank"
+                        class="btn btn-light text-primary rounded-pill px-4 shadow">
+                        <i class="fa-regular fa-calendar-check me-2"></i> Simpan Tanggal
+                    </a>
+                </div>
+            </div>
+
+            <div class="position-absolute bottom-0 start-0 w-100 overflow-hidden" style="line-height: 0;">
+                <svg viewBox="0 0 1200 120" preserveAspectRatio="none"
+                    style="width: 100%; height: 50px; fill: var(--bg-light);">
+                    <path
+                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z">
+                    </path>
+                </svg>
+            </div>
+        </section>
+
+        <section id="acara" class="py-5">
+            <div class="container" data-aos="fade-up">
+                <h2 class="font-serif text-center mb-5 display-6 text-primary">Rangkaian Acara</h2>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-5">
+                        <div class="glass-panel p-4 text-center h-100 position-relative overflow-hidden">
+                            <div class="position-absolute top-0 end-0 p-3 opacity-25 text-gold display-1"><i
+                                    class="fa-solid fa-ring"></i></div>
+                            <h3 class="font-serif fw-bold text-primary mb-3">Akad Nikah</h3>
+                            <div class="badge bg-gold text-dark mb-3">Senin, 06 April 2026</div>
+                            <p class="mb-1 fw-bold">Pukul 08:00 WIB - Selesai</p>
+                            <p class="text-muted small mb-4">Kediaman Mempelai Wanita<br>Jl. Melati Indah No. 123</p>
+                            <a href="https://goo.gl/maps/placeholder" target="_blank"
+                                class="btn btn-sm btn-outline-dark rounded-pill px-4">Buka Google Maps</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="py-5 bg-dark text-white text-center pb-5 mb-5 mb-md-0">
+            <h2 class="font-script mb-2 text-gold">Irwan & Mishul</h2>
+            <p class="small opacity-75 mb-0">Terima kasih atas doa & restu yang diberikan.</p>
+            <hr class="w-25 mx-auto opacity-25 my-4">
+            <small class="opacity-50">© 2026. Made with <i
+                    class="fa-solid fa-heart text-danger animate-pulse"></i></small>
+        </footer>
+
+        <nav class="navbar fixed-bottom navbar-mobile p-0 d-md-none" id="navbar-example">
+            <ul class="navbar-nav nav-justified w-100 d-flex flex-row navbar-floating py-2 align-items-center">
+                <li class="nav-item"><a href="#home" class="nav-link"><i class="fa-solid fa-house"></i></a></li>
+                <li class="nav-item"><a href="#mempelai" class="nav-link"><i class="fa-solid fa-user-group"></i></a>
+                </li>
+                <li class="nav-item"><a href="#acara" class="nav-link"><i class="fa-solid fa-calendar-check"></i></a>
+                </li>
+            </ul>
+        </nav>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // --- 1. CONFIGURATION ---
+        // Tanggal Akad: 6 April 2026, Jam 08:00
+        const tanggalAcara = new Date("April 6, 2026 08:00:00").getTime();
+
+        // --- 2. INITIALIZATION ---
+        document.addEventListener("DOMContentLoaded", function () {
+            AOS.init({ duration: 1200, once: true });
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const tamu = urlParams.get('to');
+            if (tamu) {
+                document.getElementById('nama-tamu').innerText = tamu;
+            }
+
+            updateCountdown();
+            createFallingPetals();
+        });
+
+        // --- 3. ANIMASI KELOPAK JATUH ---
+        function createFallingPetals() {
+            const container = document.getElementById('petals-container');
+            const petalCount = 15;
+
+            for (let i = 0; i < petalCount; i++) {
+                const petal = document.createElement('div');
+                petal.classList.add('petal');
+                const size = Math.random() * 15 + 10 + 'px';
+                const left = Math.random() * 100 + '%';
+                const animationDuration = Math.random() * 5 + 5 + 's';
+                const animationDelay = Math.random() * 5 + 's';
+
+                petal.style.width = size;
+                petal.style.height = size;
+                petal.style.left = left;
+                petal.style.backgroundColor = 'rgba(212, 163, 115, 0.4)';
+                petal.style.borderRadius = '50% 0 50% 50%';
+                petal.style.animationDuration = animationDuration;
+                petal.style.animationDelay = animationDelay;
+
+                container.appendChild(petal);
+            }
+        }
+
+        // --- 4. MUSIC & COVER CONTROL ---
+        const audio = document.getElementById('bg-music');
+        const musicBtn = document.getElementById('music-btn');
+        const cover = document.getElementById('welcome-overlay');
+
+        function bukaUndangan() {
+            cover.classList.add('cover-open');
+            playMusic();
+            setTimeout(() => {
+                document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
+            }, 800);
+        }
+
+        function playMusic() {
+            audio.play();
+            musicBtn.style.display = 'block';
+            musicBtn.classList.remove('paused');
+        }
+
+        function toggleMusic() {
+            if (audio.paused) {
+                audio.play();
+                musicBtn.classList.remove('paused');
+            } else {
+                audio.pause();
+                musicBtn.classList.add('paused');
+            }
+        }
+
+        // --- 5. COUNTDOWN TIMER ---
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = tanggalAcara - now;
+
+            if (distance < 0) {
+                document.getElementById("countdown-timer").innerHTML = "<h3 class='text-white'>Alhamdulillah, Sah!</h3>";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            const box = (val, label) => `
+                <div class="glass-panel text-dark p-2" style="min-width: 75px;">
+                    <div class="h3 fw-bold mb-0 font-serif">${val}</div>
+                    <small class="text-uppercase" style="font-size: 0.7rem;">${label}</small>
+                </div>`;
+
+            document.getElementById("countdown-timer").innerHTML =
+                box(days, 'Hari') + box(hours, 'Jam') + box(minutes, 'Menit') + box(seconds, 'Detik');
+
+            setTimeout(updateCountdown, 1000);
+        }
+    </script>
+</body>
+
+</html>
