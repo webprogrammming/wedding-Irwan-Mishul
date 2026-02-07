@@ -4,22 +4,28 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>The Wedding of Irwan & Mishul | 06 April 2026</title>
+    <meta name="description" content="Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i untuk hadir di pernikahan kami. Senin, 06 April 2026.">
+    <meta name="keywords" content="Undangan Digital, Pernikahan Irwan Mishul, Wedding Invitation, Undangan Online">
+    <meta name="author" content="Irwan & Mishul">
+    <meta name="robots" content="index, follow">
 
-    <title>The Wedding of Irwan & Mishul</title>
-    <meta name="description" content="Undangan Pernikahan Eksklusif Irwan & Mishul">
-
-    <meta property="og:type" content="https://webprogrammming.github.io/wedding-Irwan-Mishul/">
+    <meta property="og:url" content="https://wedding-irwan-mishul.vercel.app/">
+    <meta property="og:type" content="website">
     <meta property="og:title" content="The Wedding of Irwan & Mishul">
-    <meta property="og:description"
-        content="Senin, 06 April 2026 - Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i untuk hadir.">
-
-    <meta property="og:url" content="">
+    <meta property="og:description" content="Senin, 06 April 2026 - Mohon doa restu Bapak/Ibu/Saudara/i.">
+    
     <meta property="og:image" content="https://webprogrammming.github.io/wedding-Irwan-Mishul/assets/img/background.jpeg">
-
+    <meta property="og:image:alt" content="Foto Prewedding Irwan & Mishul">
     <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:width" content="600">
-    <meta property="og:image:height" content="600">
-    <meta itemprop="image" content="https://webprogrammming.github.io/wedding-Irwan-Mishul/assets/img/background.jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Irwan & Mishul Wedding">
+
+    <link rel="icon" type="image/png" href="assets/img/pria1.png">
+
+    <link rel="preload" as="image" href="assets/img/nikah.jpeg">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -27,22 +33,53 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400&family=Great+Vibes&family=Inter:wght@300;400;500&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400&family=Great+Vibes&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WeddingEvent",
+      "name": "Pernikahan Irwan & Mishul",
+      "description": "Acara resepsi dan akad nikah Irwan & Mishul",
+      "startDate": "2026-04-06T08:00",
+      "endDate": "2026-04-06T17:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "Kediaman Mempelai Wanita",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Jl. Melati Indah No. 123",
+          "addressLocality": "Mataram", 
+          "addressRegion": "NTB",
+          "addressCountry": "ID"
+        }
+      },
+      "image": [
+        "https://webprogrammming.github.io/wedding-Irwan-Mishul/assets/img/background.jpeg"
+       ],
+      "organizer": {
+        "@type": "Person",
+        "name": "Irwan & Mishul"
+      },
+      "performer": {
+        "@type": "Person",
+        "name": "Irwan & Mishul"
+      }
+    }
+    </script>
 
     <style>
+        /* CSS ASLI KAMU TETAP SAMA DISINI */
         :root {
-            /* Palette Warna: Creamy, Gold, Sage */
             --primary: #6B705C;
             --secondary: #A5A58D;
             --gold: #D4A373;
             --bg-light: #FDFCF8;
             --text-dark: #2F3E46;
-
-            /* Typography */
-            --font-main: 'Work Sans', sans-serif;
-            --font-serif: 'Cormorant Garamond', serif;
+            --font-main: 'Inter', sans-serif; /* Perbaikan: Work Sans tidak di-import, diganti Inter */
+            --font-serif: 'Playfair Display', serif; /* Perbaikan: Cormorant tidak di-import, diganti Playfair */
             --font-script: 'Great Vibes', cursive;
         }
 
@@ -54,10 +91,7 @@
         }
 
         /* --- TYPOGRAPHY UTILS --- */
-        h1,
-        h2,
-        h3,
-        .font-serif {
+        h1, h2, h3, .font-serif {
             font-family: var(--font-serif);
         }
 
@@ -103,7 +137,6 @@
         /* --- HERO & COVER (PARALLAX) --- */
         #welcome-overlay,
         header {
-            /* Pastikan file nikah.jpeg ada di assets/img/ */
             background-image: url('assets/img/nikah.jpeg');
             background-size: cover;
             background-position: center;
@@ -152,15 +185,8 @@
         }
 
         @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
 
         /* --- MEMPELAI FOTO --- */
@@ -195,9 +221,7 @@
         }
 
         @keyframes spin-slow {
-            100% {
-                transform: rotate(360deg);
-            }
+            100% { transform: rotate(360deg); }
         }
 
         /* --- MUSIC BUTTON --- */
@@ -222,8 +246,8 @@
             filter: grayscale(1);
         }
 
-        /* --- MOBILE NAV (FLOATING) --- */
-        .navbar-floating {
+         /* --- MOBILE NAV (FLOATING) --- */
+         .navbar-floating {
             background: rgba(255, 255, 255, 0.85) !important;
             backdrop-filter: blur(10px);
             border-radius: 50px;
@@ -256,21 +280,9 @@
         }
 
         @keyframes falling {
-            0% {
-                top: -10%;
-                transform: translateX(0) rotate(0deg);
-                opacity: 0;
-            }
-
-            20% {
-                opacity: 0.8;
-            }
-
-            100% {
-                top: 110%;
-                transform: translateX(100px) rotate(360deg);
-                opacity: 0;
-            }
+            0% { top: -10%; transform: translateX(0) rotate(0deg); opacity: 0; }
+            20% { opacity: 0.8; }
+            100% { top: 110%; transform: translateX(100px) rotate(360deg); opacity: 0; }
         }
     </style>
 </head>
@@ -301,9 +313,7 @@
     </section>
 
     <main class="overflow-hidden position-relative">
-
         <div id="petals-container"></div>
-
         <header id="home">
             <div class="overlay-dim"></div>
             <div class="container text-center text-white position-relative z-1" data-aos="fade-up">
@@ -323,29 +333,24 @@
         <section id="mempelai" class="py-5 bg-light position-relative">
             <div class="container text-center py-5">
                 <h2 class="font-arabic py-4 m-0" style="font-size: 2rem;">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</h2>
-
                 <p class="mb-5 text-muted px-3" data-aos="fade-up">
                     Assalamu’alaikum Warahmatullahi Wabarakatuh<br>
-                    Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud menyelenggarakan pernikahan putra-putri
-                    kami:
+                    Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud menyelenggarakan pernikahan putra-putri kami:
                 </p>
-
                 <div class="row justify-content-center align-items-center g-5">
                     <div class="col-lg-4" data-aos="fade-right">
                         <div class="couple-img-frame mb-3">
-                            <img src="assets/img/pria1.png" alt="Irwan" class="couple-img">
+                            <img src="assets/img/pria1.png" alt="Mempelai Pria Irwan" class="couple-img">
                             <div class="couple-flower"></div>
                         </div>
                         <h2 class="h3 font-serif fw-bold text-dark">Irwan</h2>
                         <p class="text-gold font-script fs-4">Putra Pertama</p>
                         <p class="small text-muted">Putra Pertama dari Bpk. Mauladin & Ibu Marianingsih</p>
                     </div>
-
                     <div class="col-lg-1 font-script display-4 text-gold" data-aos="zoom-in">&</div>
-
                     <div class="col-lg-4" data-aos="fade-left">
                         <div class="couple-img-frame mb-3">
-                            <img src="assets/img/mishul1.jpeg" alt="Mishul" class="couple-img">
+                            <img src="assets/img/mishul1.jpeg" alt="Mempelai Wanita Mishul" class="couple-img">
                             <div class="couple-flower"></div>
                         </div>
                         <h2 class="h3 font-serif fw-bold text-dark">Mishul</h2>
@@ -358,31 +363,22 @@
 
         <section class="position-relative py-5 text-white text-center" style="background: var(--primary);">
             <div class="position-absolute top-0 start-0 w-100 overflow-hidden" style="line-height: 0;">
-                <svg viewBox="0 0 1200 120" preserveAspectRatio="none"
-                    style="width: 100%; height: 50px; fill: var(--bg-light); transform: rotate(180deg);">
-                    <path
-                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z">
-                    </path>
+                <svg viewBox="0 0 1200 120" preserveAspectRatio="none" style="width: 100%; height: 50px; fill: var(--bg-light); transform: rotate(180deg);">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
                 </svg>
             </div>
-
             <div class="container py-5" data-aos="fade-up">
                 <h2 class="font-serif mb-4 display-6">Menuju Hari Bahagia</h2>
                 <div class="d-flex justify-content-center gap-3" id="countdown-timer"></div>
                 <div class="mt-5">
-                    <a href="https://calendar.google.com/" target="_blank"
-                        class="btn btn-light text-primary rounded-pill px-4 shadow">
+                    <a href="https://calendar.google.com/" target="_blank" class="btn btn-light text-primary rounded-pill px-4 shadow" rel="nofollow">
                         <i class="fa-regular fa-calendar-check me-2"></i> Simpan Tanggal
                     </a>
                 </div>
             </div>
-
             <div class="position-absolute bottom-0 start-0 w-100 overflow-hidden" style="line-height: 0;">
-                <svg viewBox="0 0 1200 120" preserveAspectRatio="none"
-                    style="width: 100%; height: 50px; fill: var(--bg-light);">
-                    <path
-                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z">
-                    </path>
+                <svg viewBox="0 0 1200 120" preserveAspectRatio="none" style="width: 100%; height: 50px; fill: var(--bg-light);">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
                 </svg>
             </div>
         </section>
@@ -393,14 +389,12 @@
                 <div class="row g-4 justify-content-center">
                     <div class="col-md-5">
                         <div class="glass-panel p-4 text-center h-100 position-relative overflow-hidden">
-                            <div class="position-absolute top-0 end-0 p-3 opacity-25 text-gold display-1"><i
-                                    class="fa-solid fa-ring"></i></div>
+                            <div class="position-absolute top-0 end-0 p-3 opacity-25 text-gold display-1"><i class="fa-solid fa-ring"></i></div>
                             <h3 class="font-serif fw-bold text-primary mb-3">Akad Nikah</h3>
                             <div class="badge bg-gold text-dark mb-3">Senin, 06 April 2026</div>
                             <p class="mb-1 fw-bold">Pukul 08:00 WIB - Selesai</p>
                             <p class="text-muted small mb-4">Kediaman Mempelai Wanita<br>Jl. Melati Indah No. 123</p>
-                            <a href="https://goo.gl/maps/placeholder" target="_blank"
-                                class="btn btn-sm btn-outline-dark rounded-pill px-4">Buka Google Maps</a>
+                            <a href="https://goo.gl/maps/placeholder" target="_blank" class="btn btn-sm btn-outline-dark rounded-pill px-4" rel="nofollow">Buka Google Maps</a>
                         </div>
                     </div>
                 </div>
@@ -411,17 +405,14 @@
             <h2 class="font-script mb-2 text-gold">Irwan & Mishul</h2>
             <p class="small opacity-75 mb-0">Terima kasih atas doa & restu yang diberikan.</p>
             <hr class="w-25 mx-auto opacity-25 my-4">
-            <small class="opacity-50">© 2026. Made with <i
-                    class="fa-solid fa-heart text-danger animate-pulse"></i></small>
+            <small class="opacity-50">© 2026. Made with <i class="fa-solid fa-heart text-danger animate-pulse"></i></small>
         </footer>
 
         <nav class="navbar fixed-bottom navbar-mobile p-0 d-md-none" id="navbar-example">
             <ul class="navbar-nav nav-justified w-100 d-flex flex-row navbar-floating py-2 align-items-center">
                 <li class="nav-item"><a href="#home" class="nav-link"><i class="fa-solid fa-house"></i></a></li>
-                <li class="nav-item"><a href="#mempelai" class="nav-link"><i class="fa-solid fa-user-group"></i></a>
-                </li>
-                <li class="nav-item"><a href="#acara" class="nav-link"><i class="fa-solid fa-calendar-check"></i></a>
-                </li>
+                <li class="nav-item"><a href="#mempelai" class="nav-link"><i class="fa-solid fa-user-group"></i></a></li>
+                <li class="nav-item"><a href="#acara" class="nav-link"><i class="fa-solid fa-calendar-check"></i></a></li>
             </ul>
         </nav>
     </main>
@@ -431,19 +422,16 @@
 
     <script>
         // --- 1. CONFIGURATION ---
-        // Tanggal Akad: 6 April 2026, Jam 08:00
         const tanggalAcara = new Date("April 6, 2026 08:00:00").getTime();
 
         // --- 2. INITIALIZATION ---
         document.addEventListener("DOMContentLoaded", function () {
             AOS.init({ duration: 1200, once: true });
-
             const urlParams = new URLSearchParams(window.location.search);
             const tamu = urlParams.get('to');
             if (tamu) {
                 document.getElementById('nama-tamu').innerText = tamu;
             }
-
             updateCountdown();
             createFallingPetals();
         });
@@ -452,7 +440,6 @@
         function createFallingPetals() {
             const container = document.getElementById('petals-container');
             const petalCount = 15;
-
             for (let i = 0; i < petalCount; i++) {
                 const petal = document.createElement('div');
                 petal.classList.add('petal');
@@ -460,7 +447,6 @@
                 const left = Math.random() * 100 + '%';
                 const animationDuration = Math.random() * 5 + 5 + 's';
                 const animationDelay = Math.random() * 5 + 's';
-
                 petal.style.width = size;
                 petal.style.height = size;
                 petal.style.left = left;
@@ -468,7 +454,6 @@
                 petal.style.borderRadius = '50% 0 50% 50%';
                 petal.style.animationDuration = animationDuration;
                 petal.style.animationDelay = animationDelay;
-
                 container.appendChild(petal);
             }
         }
@@ -506,30 +491,22 @@
         function updateCountdown() {
             const now = new Date().getTime();
             const distance = tanggalAcara - now;
-
             if (distance < 0) {
                 document.getElementById("countdown-timer").innerHTML = "<h3 class='text-white'>Alhamdulillah, Sah!</h3>";
                 return;
             }
-
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
             const box = (val, label) => `
                 <div class="glass-panel text-dark p-2" style="min-width: 75px;">
                     <div class="h3 fw-bold mb-0 font-serif">${val}</div>
                     <small class="text-uppercase" style="font-size: 0.7rem;">${label}</small>
                 </div>`;
-
-            document.getElementById("countdown-timer").innerHTML =
-                box(days, 'Hari') + box(hours, 'Jam') + box(minutes, 'Menit') + box(seconds, 'Detik');
-
+            document.getElementById("countdown-timer").innerHTML = box(days, 'Hari') + box(hours, 'Jam') + box(minutes, 'Menit') + box(seconds, 'Detik');
             setTimeout(updateCountdown, 1000);
         }
     </script>
 </body>
-
-
 </html>
